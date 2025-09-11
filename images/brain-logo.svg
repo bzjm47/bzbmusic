@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity=".95"/>
+      <stop offset="1" stop-color="#dbe6ff" stop-opacity=".9"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#g)" opacity=".15" stroke="#fff" stroke-opacity=".35" />
+  <!-- stylized brain -->
+  <path d="M18 28c0-6 4-10 10-10 2 0 4 .5 6 1.5 2-1 4-1.5 6-1.5 6 0 10 4 10 10 0 2-.5 4-1.5 6 1 2 1.5 4 1.5 6 0 6-4 10-10 10-2 0-4-.5-6-1.5-2 1-4 1.5-6 1.5-6 0-10-4-10-10 0-2 .5-4 1.5-6-1-2-1.5-4-1.5-6z"
+        fill="#ffffff" fill-opacity=".8"/>
+  <path d="M32 18v28M22 24c4 2 8 6 10 14M42 24c-4 2-8 6-10 14" stroke="#0b1220" stroke-opacity=".6" stroke-width="2" stroke-linecap="round"/>
+</svg>
