@@ -41,6 +41,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Hide helper text but keep accessible */
@@ -52,7 +53,7 @@ body {
   white-space: nowrap; border: 0;
 }
 
-/* Header: fixed with logo on the top-left */
+/* Header */
 .site-header {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -80,6 +81,7 @@ body {
   width: min(980px, 92%);
   margin: 100px auto 64px; /* accounts for fixed header */
   text-align: center;
+  flex: 1;
 }
 
 /* Title */
@@ -146,10 +148,25 @@ body {
   outline-offset: 3px;
 }
 
-/* Optional subtle divider style if needed elsewhere */
-.hr {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
-  margin: 28px auto;
-  width: 80%;
+/* Footer */
+.site-footer {
+  margin-top: 32px;
+  padding: 24px 0 36px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,.18));
 }
+.footer-inner {
+  width: min(980px, 92%);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--muted);
+}
+.footer-inner a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(255,255,255,.3);
+}
+.footer-inner a:hover { border-bottom-style: solid; }
