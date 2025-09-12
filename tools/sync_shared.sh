@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
-# Sync /shared into each first-level folder (except shared/tools/images/.git/.github)
 set -euo pipefail
-ROOT="$(pwd)"
-SHARED="$ROOT/shared"
+ROOT="$(pwd)"; SRC="$ROOT/shared"
+if [[ ! -d "$SRC" ]]; then echo "ERROR: shared/ missing"; exit 1; fi
+shopt -s nullglob
 for dir in "$ROOT"/*/ ; do
   name="$(basename "$dir")"
-  case "$name" in shared|tools|images|.git|.github) continue;; esac
-  echo "Syncing shared → $name/shared"
-  mkdir -p "$dir/shared"
-  rsync -a --delete "$SHARED/" "$dir/shared/"
+  [[ "$name" == "shared" || "$name" == "tools" || "$name" == ".git" ]] && continue
+  [[ ! -f "$dir/index.html" ]] && continue
+  DEST="$dir/shared"; echo "→ Sync $name/shared"
+  rm -rf "$DEST" && mkdir -p "$DEST"
+  if command -v rsync >/dev/null 2>&1; then rsync -a --delete "$SRC/" "$DEST/"; else cp -R "$SRC/." "$DEST/"; fi
 done
-echo "Done — commit the changes."
+echo "Done."
