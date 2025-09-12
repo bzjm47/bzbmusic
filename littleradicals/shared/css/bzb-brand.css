@@ -1,0 +1,8 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Spectral+SC:wght@400;600;700&display=swap');
+:root{--twilight-900:#08111f;--twilight-700:#0b1630;--starlight:#EAF1F7;--mist:#B9C7D9;--pine-700:#0f3b2e;--pine-600:#145341;--pine-500:#1c6b54;--accent:#8fd3c8}
+.bzb-lockup{display:inline-flex;align-items:center;gap:12px;font-feature-settings:'liga' 1,'kern' 1}
+.bzb-lockup .bzbl{font-family:'Space Grotesk',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial;font-weight:700;letter-spacing:.02em}
+.bzb-lockup .sub{font-family:'Spectral SC',ui-serif,Georgia,'Times New Roman',serif;font-weight:600;letter-spacing:.18em}
+.bzb-lockup .divider{width:1px;height:1em;transform:skewX(-10deg);background:currentColor;opacity:.45}
+.bzb-lockup.bzb-md .bzbl{font-size:28px}.bzb-lockup.bzb-md .sub{font-size:14px}
