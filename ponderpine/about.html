@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ponder &amp; Pine — BZB Music</title>
+  <meta name="description" content="Pine & Ponder — official landing page. Listen, follow, and get updates across Spotify, Apple Music, YouTube, TikTok, Instagram, and more." />
+  <link rel="canonical" href="https://bzbmusic.com/" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bzbmusic.com/" />
+  <meta property="og:title" content="Ponder & Pine — BZB Music" />
+  <meta property="og:description" content="Official landing page. Listen everywhere, follow, and join the list." />
+  <meta property="og:image" content="/og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ponder & Pine — BZB Music" />
+  <meta name="twitter:description" content="Official landing page. Listen everywhere, follow, and join the list." />
+  <meta name="twitter:image" content="/og.jpg" />
+
+  <!-- Icons (replace these files later) -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Minimal, fast, accessible styles -->
+  <style>
+    :root {
+      --bg: #0b0b0c;
+      --fg: #f4f4f5;
+      --muted: #b3b3b8;
+      --brand: #8ef0c7; /* soft pine-mint */
+      --brand-2: #7fb3ff; /* cool sky */
+      --card: #141417;
+      --ring: #89f5d9aa;
+      --maxw: 980px;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+      color: var(--fg);
+      background: radial-gradient(1200px 800px at 70% -10%, #17302a 0%, transparent 60%),
+                  radial-gradient(1000px 700px at -10% 20%, #12223a 0%, transparent 60%),
+                  var(--bg);
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 28px; }
+
+    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .logo {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-weight: 700; letter-spacing: 0.3px; font-size: 18px;
+    }
+    .logo-badge {
+      width: 36px; height: 36px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      display: grid; place-items: center; color: #0a0a0a; font-weight: 800;
+    }
+    nav a { opacity: 0.9; margin-left: 14px; font-size: 14px; }
+    nav a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 3px; }
+
+    .hero { text-align: center; padding: 72px 0 36px; }
+    .title {
+      font-size: clamp(38px, 6vw, 72px);
+      line-height: 1.05; margin: 0 0 10px 0; font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+    .tag { color: var(--muted); font-size: clamp(16px, 2vw, 20px); }
+
+    .cta {
+      margin: 26px auto 0; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 16px; border-radius: 12px; border: 1px solid #2a2a31;
+      background: linear-gradient(180deg, #1a1a1f, #141418);
+      box-shadow: 0 1px 0 #2a2a31 inset, 0 0 0 0px var(--ring);
+      transition: transform .05s ease, box-shadow .2s ease, border-color .2s ease;
+      font-weight: 600;
+    }
+    .btn:hover { transform: translateY(-1px); border-color: #3a3a44; box-shadow: 0 0 0 6px var(--ring); }
+    .btn svg { width: 18px; height: 18px; }
+
+    .card {
+      background: linear-gradient(180deg, #121217, #0e0e12);
+      border: 1px solid #1f1f26; border-radius: 16px; padding: 18px; 
+      box-shadow: 0 1px 0 #2a2a31 inset, 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); }
+    .social a { display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 12px; border: 1px solid #202028; }
+    .social a:hover { border-color: #2e2e38; background: #0f1014; }
+    .social svg { width: 22px; height: 22px; }
+    .muted { color: var(--muted); font-size: 14px; }
+
+    form { display: grid; grid-template-columns: 1fr auto; gap: 10px; }
+    input[type=email] {
+      width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid #2a2a31; background: #0e0e14; color: var(--fg);
+    }
+    input[type=email]::placeholder { color: #8b8b91; }
+    button[type=submit] {
+      padding: 12px 14px; border-radius: 12px; border: 1px solid #2a2a31; background: linear-gradient(180deg, #1a1a1f, #141418); color: var(--fg); font-weight: 700;
+    }
+    button[type=submit]:hover { border-color: #3a3a44; box-shadow: 0 0 0 6px var(--ring); }
+
+    footer { margin: 40px 0 20px; text-align: center; color: var(--muted); font-size: 14px; }
+
+    @media (prefers-color-scheme: light) {
+      :root { --bg: #f7f7fb; --fg: #0d0e10; --muted: #58586a; --card: #ffffff; }
+      body { background: radial-gradient(1200px 800px at 70% -10%, #d6f7ec 0%, transparent 60%),
+                          radial-gradient(1000px 700px at -10% 20%, #d6e8ff 0%, transparent 60%),
+                          var(--bg); }
+      .card { background: #fff; border-color: #e8e8ef; box-shadow: 0 1px 0 #fff inset, 0 8px 24px rgba(0,0,0,0.06); }
+      .btn, button[type=submit] { background: linear-gradient(180deg, #ffffff, #f6f7fb); border-color: #e6e7ef; }
+      input[type=email] { background: #fff; border-color: #e6e7ef; color: #0d0e10; }
+      .social a { border-color: #e6e7ef; }
+      .social a:hover { background: #f7f8fc; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "Ponder & Pine",
+    "url": "https://bzbmusic.com",
+    "foundingLocation": "California, USA",
+    "genre": ["Americana", "Folk", "Indie"],
+    "sameAs": [
+      "https://open.spotify.com/artist/REPLACE",
+      "https://music.apple.com/artist/REPLACE",
+      "https://www.youtube.com/channel/UCUsqMBzbLyXrWimYfYQYvmgE",
+      "https://www.instagram.com/ponder_pine",
+      "https://www.tiktok.com/@ponder_pine",
+      "https://ponderpine.bandcamp.com"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <div class="logo-badge" aria-hidden="true">P&P</div>
+        <span>Ponder &amp; Pine</span>
+      </div>
+      <nav>
+        <a href="#listen">Listen</a>
+        <a href="#watch">Watch</a>
+        <a href="#follow">Follow</a>
+        <a href="#updates">Updates</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1 class="title">Ponder & Pine</h1>
+        <p class="tag">Americana / folk storytelling by Ponder &amp; Pine</p>
+        <div class="cta">
+          <a class="btn" href="https://open.spotify.com/artist/64H6vzR93Stn75LCSf0Iy0?si=RR618StNQlagFc2moHAMXwE" target="_blank" rel="noopener" aria-label="Listen on Spotify">
+            <!-- Spotify icon -->
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5C6.201 1.5 1.5 6.201 1.5 12S6.201 22.5 12 22.5 22.5 17.799 22.5 12 17.799 1.5 12 1.5Zm5.172 15.063a.9.9 0 0 1-1.237.3c-3.388-2.071-7.656-2.54-12.672-1.396a.9.9 0 1 1-.405-1.757c5.43-1.249 10.1-.716 13.85 1.548a.9.9 0 0 1 .464 1.305Zm1.654-3.662a1.125 1.125 0 0 1-1.544.375c-3.874-2.374-9.78-3.068-14.37-1.687a1.125 1.125 0 1 1-.65-2.159c5.184-1.562 11.6-.787 15.983 1.91a1.125 1.125 0 0 1 .581 1.561Zm.156-3.904a1.35 1.35 0 0 1-1.856.45C12.76 4.94 5.87 4.564 2.198 5.673a1.35 1.35 0 0 1-.78-2.588c4.356-1.313 11.964-.893 16.97 2.09a1.35 1.35 0 0 1 .594 1.822Z"/></svg>
+            <span>Listen on Spotify</span>
+          </a>
+          <a class="btn" href="https://music.apple.com/us/artist/ponder-pine/1838906578" target="_blank" rel="noopener" aria-label="Listen on Apple Music">
+            <!-- Apple icon -->
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.365 1.99c0 1.14-.446 2.207-1.18 3.01-.755.827-1.99 1.468-3.046 1.392-.12-1.09.432-2.238 1.158-3.01.755-.806 2.062-1.45 3.068-1.392ZM20.9 17.11c-.494 1.142-1.08 2.187-1.757 3.133-.924 1.302-1.975 2.926-3.447 2.954-1.454.03-1.921-.846-3.577-.846-1.658 0-2.165.818-3.604.875-1.47.057-2.58-1.4-3.512-2.695C3.08 18.89 1.5 15.47 1.5 12.5c0-2.99 1.94-4.574 3.855-4.602 1.48-.03 2.71.965 3.575.965.865 0 2.324-1.18 3.93-1.009.669.027 2.554.27 3.764 2.041-.096.061-2.246 1.319-2.218 3.916.03 3.124 2.72 4.163 2.74 4.174.022.011-.093.365-.154.624Z"/></svg>
+            <span>Apple Music</span>
+          </a>
+          <a class="btn" href="#watch" aria-label="Watch videos">
+            <!-- Play icon -->
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            <span>Watch</span>
+          </a>
+        </div>
+      </section>
+
+      <section id="listen" class="card" aria-labelledby="listen-h">
+        <h2 id="listen-h">Listen everywhere</h2>
+        <div class="grid social" style="margin-top: 12px;">
+          <a href="https://open.spotify.com/artist/64H6vzR93Stn75LCSf0Iy0?si=RR618StNQlagFc2moHAMXw" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5C6.201 1.5 1.5 6.201 1.5 12S6.201 22.5 12 22.5 22.5 17.799 22.5 12 17.799 1.5 12 1.5Zm5.172 15.063a.9.9 0 0 1-1.237.3c-3.388-2.071-7.656-2.54-12.672-1.396a.9.9 0 1 1-.405-1.757c5.43-1.249 10.1-.716 13.85 1.548a.9.9 0 0 1 .464 1.305Z"/></svg>
+            <span>Spotify</span>
+          </a>
+          <a href="https://music.apple.com/us/artist/ponder-pine/1838906578" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.365 1.99c0 1.14-.446 2.207-1.18 3.01-.755.827-1.99 1.468-3.046 1.392-.12-1.09.432-2.238 1.158-3.01.755-.806 2.062-1.45 3.068-1.392ZM20.9 17.11c-.494 1.142-1.08 2.187-1.757 3.133-.924 1.302-1.975 2.926-3.447 2.954-1.454.03-1.921-.846-3.577-.846-1.658 0-2.165.818-3.604.875-1.47.057-2.58-1.4-3.512-2.695C3.08 18.89 1.5 15.47 1.5 12.5c0-2.99 1.94-4.574 3.855-4.602 1.48-.03 2.71.965 3.575.965.865 0 2.324-1.18 3.93-1.009.669.027 2.554.27 3.764 2.041-.096.061-2.246 1.319-2.218 3.916.03 3.124 2.72 4.163 2.74 4.174.022.011-.093.365-.154.624Z"/></svg>
+            <span>Apple Music</span>
+          </a>
+          <a href="https://youtube.com/@ponder_pine" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3.2 3.2 0 0 0-2.25-2.262C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.25.438A3.2 3.2 0 0 0 .5 6.2 33.9 33.9 0 0 0 .062 12 33.9 33.9 0 0 0 .5 17.8a3.2 3.2 0 0 0 2.25 2.262C4.5 20.5 12 20.5 12 20.5s7.5 0 9.25-.438A3.2 3.2 0 0 0 23.5 17.8 33.9 33.9 0 0 0 23.938 12 33.9 33.9 0 0 0 23.5 6.2ZM9.75 15.5v-7l6 3.5-6 3.5Z"/></svg>
+            <span>YouTube Music</span>
+          </a>
+          <a href="https://ponderpine.bandcamp.com" target="_blank" rel="noopener">
+            <!-- Bandcamp B -->
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.6 6.4h8.8L16.4 17.6H7.6L7.6 6.4z"/></svg>
+            <span>Bandcamp</span>
+          </a>
+        </div>
+      </section>
+
+      <section id="watch" style="margin-top: 16px;" class="card" aria-labelledby="watch-h">
+        <h2 id="watch-h">Watch</h2>
+        <div class="grid social" style="margin-top: 12px;">
+          <a href="https://www.youtube.com/@ponder_pine" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3.2 3.2 0 0 0-2.25-2.262C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.25.438A3.2 3.2 0 0 0 .5 6.2 33.9 33.9 0 0 0 .062 12 33.9 33.9 0 0 0 .5 17.8a3.2 3.2 0 0 0 2.25 2.262C4.5 20.5 12 20.5 12 20.5s7.5 0 9.25-.438A3.2 3.2 0 0 0 23.5 17.8 33.9 33.9 0 0 0 23.938 12 33.9 33.9 0 0 0 23.5 6.2ZM9.75 15.5v-7l6 3.5-6 3.5Z"/></svg>
+            <span>YouTube</span>
+          </a>
+          <a href="https://www.tiktok.com/@ponder_pine" target="_blank" rel="noopener">
+            <!-- TikTok -->
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 8.29a6.9 6.9 0 0 1-4.9-2.05V15.2a5.8 5.8 0 1 1-5.8-5.8c.24 0 .47.02.7.06v3.1a2.8 2.8 0 1 0 2.1 2.7V1.5h3.1a6.9 6.9 0 0 0 4.8 4.7V8.3Z"/></svg>
+            <span>TikTok</span>
+          </a>
+          <a href="https://www.instagram.com/ponder_pine" target="_blank" rel="noopener">
+            <!-- Instagram -->
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm12.5 5.25a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5ZM12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm0-2.2a3.8 3.8 0 1 1 0-7.6 3.8 3.8 0 0 1 0 7.6Z"/></svg>
+            <span>Instagram</span>
+          </a>
+        </div>
+      </section>
+
+      <section id="follow" style="margin-top: 16px;" class="card" aria-labelledby="follow-h">
+        <h2 id="follow-h">Follow &amp; contact</h2>
+        <div class="grid social" style="margin-top: 12px;">
+          <a href="mailto:hello@bzbfilms.com">
+            <!-- Mail -->
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 6.75A2.75 2.75 0 0 1 4.75 4h14.5A2.75 2.75 0 0 1 22 6.75v10.5A2.75 2.75 0 0 1 19.25 20H4.75A2.75 2.75 0 0 1 2 17.25V6.75Zm2.75-.25a.75.75 0 0 0-.75.75v.26l7.22 4.5a.75.75 0 0 0 .76 0l7.02-4.38V7a.75.75 0 0 0-.75-.75H4.75Z"/></svg>
+            <span>Email</span>
+          </a>
+          <a href="https://linktr.ee/REPLACE" target="_blank" rel="noopener">
+            <!-- Link icon -->
