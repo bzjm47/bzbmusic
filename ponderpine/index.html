@@ -3,32 +3,53 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BZB Music — Ponder &amp; Pine</title>
+  <title>Ponder &amp; Pine — BZB Music</title>
+  <meta name="description" content="Ponder &amp; Pine — links to Spotify, Apple Music, TikTok, Instagram, YouTube, and Bandcamp.">
+
+  <!-- Shared brand + favicons (must exist in ponderpine/shared after sync) -->
+  <link rel="manifest" href="/shared/favicons/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="/shared/favicons/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/shared/favicons/android-chrome-512x512.png">
+  <link rel="stylesheet" href="/shared/css/bzb-brand.css">
+
+  <!-- Site styles -->
   <link rel="stylesheet" href="style.css">
-  <meta name="description" content="BZB Music — links to Spotify, Apple Music, TikTok, Instagram, YouTube, and Bandcamp.">
 </head>
 <body>
-  <header class="site-header" role="banner">
-    <a class="logo" href="https://ben.musser.com" aria-label="Go to ben.musser.com">
-      <img src="images/brain-logo.svg" alt="" width="40" height="40" loading="lazy">
-      <span class="visually-hidden">ben.musser.com</span>
-    </a>
-  </header>
+  <!-- Top-left corner brand link back to main -->
+  <a class="bzb-corner" href="https://www.bzbmusic.com" aria-label="BZB Music — Home">
+    <span class="bzb-lockup bzb-sm bzb-dark">
+      <span class="bzbl">BZB</span><span class="divider"></span><span class="sub">MUSIC</span>
+    </span>
+  </a>
 
   <main class="container" role="main">
-    <h1 class="title">BZB Music</h1>
+    <!-- Keep H1 for accessibility; visually hidden if your CSS has that class -->
+    <h1 class="visually-hidden">Ponder &amp; Pine</h1>
 
-    <!-- Banner image below the main title -->
+    <!-- Banner image -->
     <img class="banner" src="images/banner.jpg" alt="Ponder &amp; Pine banner">
 
-    <!-- Link buttons (centered) -->
+    <!-- Link buttons with shared icons -->
     <nav class="link-grid" aria-label="Music Links">
-      <a class="button" href="https://oopen.spotify.com/artist/64H6vzR93Stn75LCSf0Iy0?si=RR618StNQlagFc2moHAMXw" target="_blank" rel="noopener">Spotify</a>
-      <a class="button" href="https://music.apple.com/us/artist/ponder-pine/1838906578" target="_blank" rel="noopener">Apple Music</a>
-      <a class="button" href="https://www.tiktok.com/@ponder_pine" target="_blank" rel="noopener">TikTok</a>
-      <a class="button" href="https://instagram.com/ponder_pine" target="_blank" rel="noopener">Instagram</a>
-      <a class="button" href="https://www.youtube.com/@ponder_pine" target="_blank" rel="noopener">YouTube</a>
-      <a class="button" href="https://ponderpine.bandcamp.com" target="_blank" rel="noopener">Bandcamp</a>
+      <a class="button" href="https://open.spotify.com/artist/64H6vzR93Stn75LCSf0Iy0?si=RR618StNQlagFc2moHAMXw" target="_blank" rel="noopener">
+        <img class="bzb-ico" src="/shared/icons/spotify.svg" alt=""> Spotify
+      </a>
+      <a class="button" href="https://music.apple.com/us/artist/ponder-pine/1838906578" target="_blank" rel="noopener">
+        <img class="bzb-ico" src="/shared/icons/applemusic.svg" alt=""> Apple Music
+      </a>
+      <a class="button" href="https://www.tiktok.com/@ponder_pine" target="_blank" rel="noopener">
+        <img class="bzb-ico" src="/shared/icons/tiktok.svg" alt=""> TikTok
+      </a>
+      <a class="button" href="https://instagram.com/ponder_pine" target="_blank" rel="noopener">
+        <img class="bzb-ico" src="/shared/icons/instagram.svg" alt=""> Instagram
+      </a>
+      <a class="button" href="https://www.youtube.com/@ponder_pine" target="_blank" rel="noopener">
+        <img class="bzb-ico" src="/shared/icons/youtube.svg" alt=""> YouTube
+      </a>
+      <a class="button" href="https://ponderpine.bandcamp.com" target="_blank" rel="noopener">
+        <img class="bzb-ico" src="/shared/icons/bandcamp.svg" alt=""> Bandcamp
+      </a>
     </nav>
   </main>
 
