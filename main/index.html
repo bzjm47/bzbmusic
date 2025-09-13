@@ -22,6 +22,22 @@
     .brand-ico{width:22px;height:22px;vertical-align:middle}
   </style>
 </head>
+<script>
+  // Open BZB subdomain links in same tab; external sites in new tab.
+  document.querySelectorAll('a[href]').forEach(a => {
+    try {
+      const url = new URL(a.getAttribute('href'), location.href);
+      const isBZB = /\.?bzbmusic\.com$/i.test(url.hostname);
+      if (isBZB) {
+        a.removeAttribute('target');  // same window for all *.bzbmusic.com
+        a.removeAttribute('rel');
+      } else if (url.origin !== location.origin) {
+        a.target = '_blank';          // external sites in new tab
+        a.rel = 'noopener noreferrer';
+      }
+    } catch (e) { /* ignore malformed links */ }
+  });
+</script>
 <body>
   <!-- Brain icon lives only on MAIN; links to Ben Musser -->
   <a class="bzb-corner" href="https://ben.musser.com" aria-label="Ben Musser — Home">
@@ -34,16 +50,17 @@
   <header class="topbar"></header>
 
   <main class="container">
-    <h1 class="title">Artists</h1>
+    <h1 class="title">BZB Music</h1>
+    <h2 class="muted" style="margin-top:4px;">Artists</h2>
     <p class="muted">Pick an artist to visit their page.</p>
 
     <section class="grid">
-      <a class="card" href="https://ponderpine.bzbmusic.com" target="_blank" rel="noopener">
+      <a class="card" href="https://ponderpine.bzbmusic.com">
         <h3>Ponder &amp; Pine</h3>
         <div>Open subdomain → ponderpine.bzbmusic.com</div>
       </a>
 
-      <a class="card" href="https://littleradicals.bzbmusic.com" target="_blank" rel="noopener">
+      <a class="card" href="https://littleradicals.bzbmusic.com">
         <h3>Little Radicals</h3>
         <div>Open subdomain → littleradicals.bzbmusic.com</div>
       </a>
