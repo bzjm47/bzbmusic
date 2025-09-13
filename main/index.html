@@ -13,7 +13,6 @@
   <!-- Site styles -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Page-specific tweaks -->
   <style>
     .hero{margin-bottom:12px;text-align:center}
     .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:24px}
@@ -37,8 +36,11 @@
       background:linear-gradient(180deg,#c07a26,#a46823);
       border-color:rgba(255,216,158,.35);
     }
-    /* Small footprint logo */
-    .brand-ico{width:22px;height:22px;display:inline-block;vertical-align:middle}
+    /* Footprint link (top-left) */
+    .bzb-corner{position:fixed;top:15px;left:15px;z-index:1000}
+    .brand-ico{width:28px;height:28px;display:inline-block;vertical-align:middle}
+    /* Make sure header overlay doesn't block clicks */
+    .topbar{pointer-events:none}
   </style>
 </head>
 <body>
@@ -50,7 +52,6 @@
   <header class="topbar"></header>
 
   <main class="container">
-    <!-- BIG lockup like the corner, just scaled up -->
     <div class="hero">
       <div class="bzb-lockup bzb-xl bzb-dark">
         <div class="bzbl">BZB</div><div class="divider"></div><div class="sub">MUSIC</div>
