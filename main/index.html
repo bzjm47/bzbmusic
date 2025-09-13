@@ -4,7 +4,7 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BZB Music</title>
 
-  <!-- Shared brand + favicons (each site serves its own /shared/*) -->
+  <!-- Shared brand + favicons -->
   <link rel="manifest" href="/shared/favicons/site.webmanifest">
   <link rel="icon" type="image/png" sizes="192x192" href="/shared/favicons/android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/shared/favicons/android-chrome-512x512.png">
@@ -15,55 +15,52 @@
 
   <!-- Page-specific tweaks -->
   <style>
+    .hero{margin-bottom:12px;text-align:center}
     .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:24px}
-    .card{border:1px solid var(--border);border-radius:14px;padding:16px;text-decoration:none;color:var(--text);text-align:left}
-    .muted{color:var(--mist)}
-    /* Optional: size the brain icon nicely */
-    .brand-ico{width:22px;height:22px;vertical-align:middle}
+    .card{
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:20px 16px;
+      text-decoration:none;
+      color:var(--text);
+      text-align:center;
+      transition:transform .08s ease, box-shadow .12s ease, border-color .12s ease;
+    }
+    .card h3{margin:8px 0 2px;font-weight:800;letter-spacing:.02em}
+    .card:hover{transform:translateY(-1px);border-color:var(--border-strong);box-shadow:0 10px 28px rgba(0,0,0,.25)}
+    /* Per-artist tints (match subdomains) */
+    .card--ponderpine{
+      background:linear-gradient(180deg,#145341,#1c6b54);
+      border-color:rgba(143,211,200,.35);
+    }
+    .card--littleradicals{
+      background:linear-gradient(180deg,#c07a26,#a46823);
+      border-color:rgba(255,216,158,.35);
+    }
+    /* Small footprint logo */
+    .brand-ico{width:22px;height:22px;display:inline-block;vertical-align:middle}
   </style>
 </head>
-<script>
-  // Open BZB subdomain links in same tab; external sites in new tab.
-  document.querySelectorAll('a[href]').forEach(a => {
-    try {
-      const url = new URL(a.getAttribute('href'), location.href);
-      const isBZB = /\.?bzbmusic\.com$/i.test(url.hostname);
-      if (isBZB) {
-        a.removeAttribute('target');  // same window for all *.bzbmusic.com
-        a.removeAttribute('rel');
-      } else if (url.origin !== location.origin) {
-        a.target = '_blank';          // external sites in new tab
-        a.rel = 'noopener noreferrer';
-      }
-    } catch (e) { /* ignore malformed links */ }
-  });
-</script>
 <body>
-  <!-- Brain icon lives only on MAIN; links to Ben Musser -->
+  <!-- Top-left: white footprint back to Ben Musser -->
   <a class="bzb-corner" href="https://ben.musser.com" aria-label="Ben Musser — Home">
-    <!-- If you have a real brain.svg, swap this src.
-         Using the shared swirl mark as a placeholder: -->
-    <img class="brand-ico" src="/shared/logos/swirl.svg" alt="">
+    <img class="brand-ico" src="/images/footprint-white.png" alt="Footprint logo">
   </a>
 
-  <!-- (Optional) top bar shell; empty so the corner brand sits cleanly -->
   <header class="topbar"></header>
 
   <main class="container">
-    <h1 class="title">BZB Music</h1>
-    <h2 class="muted" style="margin-top:4px;">Artists</h2>
-    <p class="muted">Pick an artist to visit their page.</p>
+    <!-- BIG lockup like the corner, just scaled up -->
+    <div class="hero">
+      <div class="bzb-lockup bzb-xl bzb-dark">
+        <div class="bzbl">BZB</div><div class="divider"></div><div class="sub">MUSIC</div>
+      </div>
+      <h2 class="muted" style="margin-top:8px;">Artists</h2>
+    </div>
 
     <section class="grid">
-      <a class="card" href="https://ponderpine.bzbmusic.com">
-        <h3>Ponder &amp; Pine</h3>
-        <div>Open subdomain → ponderpine.bzbmusic.com</div>
-      </a>
-
-      <a class="card" href="https://littleradicals.bzbmusic.com">
-        <h3>Little Radicals</h3>
-        <div>Open subdomain → littleradicals.bzbmusic.com</div>
-      </a>
+      <a class="card card--ponderpine" href="https://ponderpine.bzbmusic.com"><h3>Ponder &amp; Pine</h3></a>
+      <a class="card card--littleradicals" href="https://littleradicals.bzbmusic.com"><h3>Little Radicals</h3></a>
     </section>
   </main>
 
